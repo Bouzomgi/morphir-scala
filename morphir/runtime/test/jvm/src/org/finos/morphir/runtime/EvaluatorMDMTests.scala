@@ -578,6 +578,9 @@ object EvaluatorMDMTests extends MorphirBaseSpec {
         testEvaluation("LessThanChar")("sdkBasicsTests", "sdkLessThanTestChar")(
           Data.Boolean(true)
         ) @@ ignore @@ TestAspect.tag("Not Implemented yet")
+      ),
+      suite("String Tests")(
+        testEvaluation("toInt")("StringTests", "stringToIntTest")(Data.Optional.Some(Data.Int(25)))
       )
     ).provideLayerShared(morphirRuntimeLayer)
 

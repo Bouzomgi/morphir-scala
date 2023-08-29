@@ -2,7 +2,7 @@ module Morphir.Examples.App.StringTests exposing (..)
 import Morphir.SDK.String exposing (..)
 
 --Test: String/toInt
-toIntTest : () -> Int
-toIntTest _ =
+stringToIntTest : () -> Maybe Int
+stringToIntTest _ =
     toInt "25"
---expected = 25
+--expected = Just 25

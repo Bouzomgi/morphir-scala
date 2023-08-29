@@ -65,7 +65,7 @@ object String {
   val toInt: SDKValue[Unit, Type.UType] = SDKValue.SDKNativeFunction(
     1,
     (a: Result[Unit, Type.UType]) =>
-      Result.Primitive(Result.unwrap(a).asInstanceOf[String].toInt)
+      Result.Primitive(Result.unwrap(a).asInstanceOf[String].toIntOption)
   )
 
   val sdk: Map[FQName, SDKValue[Unit, Type.UType]] = Map(

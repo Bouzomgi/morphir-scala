@@ -20,6 +20,7 @@
         "PatternMatchTests",
         "RecordTests",
         "SimpleTests",
+        "StringTests",
         "TupleTests",
         "TypeCheckerTests",
         "UserDefinedReferenceTests",
