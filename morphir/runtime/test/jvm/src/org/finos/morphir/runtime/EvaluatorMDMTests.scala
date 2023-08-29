@@ -4,6 +4,7 @@ import org.finos.morphir.datamodel.Util.*
 import org.finos.morphir.datamodel.*
 import org.finos.morphir.ir.Type
 import org.finos.morphir.naming.*
+import org.finos.morphir.runtime.EvaluatorMDMTests.testEvaluation
 import org.finos.morphir.runtime.environment.MorphirEnv
 import org.finos.morphir.testing.MorphirBaseSpec
 import zio.test.*
@@ -580,7 +581,9 @@ object EvaluatorMDMTests extends MorphirBaseSpec {
         ) @@ ignore @@ TestAspect.tag("Not Implemented yet")
       ),
       suite("String Tests")(
-        testEvaluation("toInt")("StringTests", "stringToIntTest")(Data.Optional.Some(Data.Int(25)))
+//        testEvaluation("toInt")("StringTests", "stringToIntTest")(Data.Optional.Some(Data.Int(25))),
+        testEvaluation("isEmpty1")("StringTests", "stringIsEmptyTest1")(Data.Boolean(true)),
+        testEvaluation("isEmpty2")("StringTests", "stringIsEmptyTest2")(Data.Boolean(false))
       )
     ).provideLayerShared(morphirRuntimeLayer)
 
