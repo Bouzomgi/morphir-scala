@@ -93,6 +93,13 @@ object SetSDK {
     }
   )
 
+  val member: SDKValue[Unit, Type.UType] = SDKValue.SDKNativeFunction(
+    2,
+    (l: Result[Unit, Type.UType], r: Result[Unit, Type.UType]) => {
+
+    }
+  )
+
   val sdk: Map[FQName, SDKValue[Unit, Type.UType]] = Map(
     FQName.fromString("Morphir.SDK:Set:fromList") -> fromList
   )
