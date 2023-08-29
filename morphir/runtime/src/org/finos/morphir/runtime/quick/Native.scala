@@ -68,10 +68,17 @@ object String {
       Result.Primitive(Result.unwrap(a).asInstanceOf[String].toIntOption)
   )
 
+  val isEmpty: SDKValue[Unit, Type.UType] = SDKValue.SDKNativeFunction(
+    1,
+    (a: Result[Unit, Type.UType]) =>
+      Result.Primitive(Result.unwrap(a).asInstanceOf[String].length == 0)
+  )
+
   val sdk: Map[FQName, SDKValue[Unit, Type.UType]] = Map(
-    FQName.fromString("Morphir.SDK:String:append") -> append,
-    FQName.fromString("Morphir.SDK:String:right")  -> right,
-    FQName.fromString("Morphir.SDK:String:toInt")  -> toInt
+    FQName.fromString("Morphir.SDK:String:append")  -> append,
+    FQName.fromString("Morphir.SDK:String:right")   -> right,
+    FQName.fromString("Morphir.SDK:String:toInt")   -> toInt,
+    FQName.fromString("Morphir.SDK:String:isEmpty") -> isEmpty
   )
 }
 object Native {
